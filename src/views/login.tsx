@@ -3,11 +3,11 @@ import {
   UserOutlined,
   EyeTwoTone,
   EyeInvisibleOutlined,
-  createFromIconfontCN
+  createFromIconfontCN,
 } from "@ant-design/icons";
-import { Button, Input } from "antd";
+import { Button, Radio, Input } from "antd";
 import "antd/dist/antd.css";
-import "./login.css";
+import "../views/login.css";
 // import{passwordIcon}
 // import"../public/static/iconfont"
 // const passwordIcon : React.FC = () => {
@@ -15,7 +15,6 @@ import "./login.css";
 //     scriptUrl:"http://at.alicdn.com/t/c/font_3746313_0u93nd58e0w.js"
 //   })
 // }
-
 
 const Login: React.FC = () => {
   return (
@@ -37,23 +36,6 @@ const Login: React.FC = () => {
           <div className="login_logo"></div>
         </div>
 
-        <div className="login_category">
-          <p
-            style={{
-              marginRight: "2rem",
-            }}
-          >
-            登录
-          </p>
-          <p>|</p>
-          <p
-            style={{
-              marginLeft: "2rem",
-            }}
-          >
-            注册
-          </p>
-        </div>
         <div
           style={{
             display: "flex",
@@ -77,8 +59,15 @@ const Login: React.FC = () => {
             >
               账号
             </p>
-           
-            <Input placeholder="手机号/用户名" prefix={<UserOutlined />} />
+
+            <Input
+              style={{
+                width: "15rem",
+                marginLeft: "1rem",
+              }}
+              placeholder="手机号/用户名"
+              prefix={<UserOutlined />}
+            />
           </div>
           <div
             style={{
@@ -95,8 +84,12 @@ const Login: React.FC = () => {
             >
               密码
             </p>
-          
-            <Input.Password 
+
+            <Input.Password
+              style={{
+                width: "15rem",
+                marginLeft: "1rem",
+              }}
               placeholder="请输入密码"
               prefix={<span className="iconfont  icon-mima "></span>}
               iconRender={(visible) =>
@@ -104,7 +97,46 @@ const Login: React.FC = () => {
               }
             />
           </div>
-          <Button type="primary">登录</Button>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              marginTop: "1rem",
+            }}
+          >
+            <Radio>记住密码</Radio>
+            <p
+              style={{
+                marginLeft: "3rem",
+              }}
+            >
+              忘记密码
+            </p>
+          </div>
+          <div
+            style={{
+              marginTop: "1rem",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                marginTop: "1rem",
+              }}
+            >
+              <div>
+                <Button type="primary">登录</Button>
+              </div>
+              <div
+                style={{
+                  marginLeft: "4rem",
+                }}
+              >
+                <Button type="primary">注册</Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
